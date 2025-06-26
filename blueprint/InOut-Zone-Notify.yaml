@@ -3,7 +3,7 @@ blueprint:
   description: Envía una notificación cuando una persona entra o sale de una zona específica.
   domain: automation
   source_url: https://github.com/home-assistant/core/blob/dev/homeassistant/components/automation/blueprints/notify_leaving_zone.yaml
-  author: Home Assistant (modificado en español)
+  author: DSALCEDO
   input:
     person_entity:
       name: Persona
