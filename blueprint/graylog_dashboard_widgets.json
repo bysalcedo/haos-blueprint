@@ -1,0 +1,170 @@
+{
+  "dashboard_title": "Dashboard de Seguridad y Sistema",
+  "widgets": [
+    {
+      "id": "widget-1",
+      "type": "messages",
+      "title": "Bloqueos de firewall por IP externa",
+      "query": "message:\"Blocked by Firewall\" AND message:/\\b(?:[0-9]{1,3}\\.){3}[0-9]{1,3}\\b/",
+      "timerange": {
+        "type": "relative",
+        "range": 3600
+      },
+      "config": {}
+    },
+    {
+      "id": "widget-2",
+      "type": "data table",
+      "title": "Top 10 IPs bloqueadas",
+      "query": "message:\"Blocked by Firewall\"",
+      "timerange": {
+        "type": "relative",
+        "range": 3600
+      },
+      "config": {}
+    },
+    {
+      "id": "widget-3",
+      "type": "data table",
+      "title": "Dispositivos internos más bloqueados",
+      "query": "message:\"Blocked by Firewall\" AND message:/msg=/",
+      "timerange": {
+        "type": "relative",
+        "range": 3600
+      },
+      "config": {}
+    },
+    {
+      "id": "widget-4",
+      "type": "messages",
+      "title": "Eventos de bloqueo por categoría",
+      "query": "message:\"UNIFICategory=Security\"",
+      "timerange": {
+        "type": "relative",
+        "range": 3600
+      },
+      "config": {}
+    },
+    {
+      "id": "widget-5",
+      "type": "messages",
+      "title": "Bloqueos por interfaz específica",
+      "query": "message:/interface: br0/",
+      "timerange": {
+        "type": "relative",
+        "range": 3600
+      },
+      "config": {}
+    },
+    {
+      "id": "widget-6",
+      "type": "messages",
+      "title": "Errores de sistema críticos",
+      "query": "level:3 OR level:0",
+      "timerange": {
+        "type": "relative",
+        "range": 3600
+      },
+      "config": {}
+    },
+    {
+      "id": "widget-7",
+      "type": "messages",
+      "title": "Eventos de earlyoom (memoria baja)",
+      "query": "message:\"earlyoom\"",
+      "timerange": {
+        "type": "relative",
+        "range": 3600
+      },
+      "config": {}
+    },
+    {
+      "id": "widget-8",
+      "type": "messages",
+      "title": "Errores de configuración o migración",
+      "query": "message:\"config-migrate-helper\"",
+      "timerange": {
+        "type": "relative",
+        "range": 3600
+      },
+      "config": {}
+    },
+    {
+      "id": "widget-9",
+      "type": "messages",
+      "title": "Cambios de configuración por usuarios",
+      "query": "message:\"Admin Changed Setting\"",
+      "timerange": {
+        "type": "relative",
+        "range": 3600
+      },
+      "config": {}
+    },
+    {
+      "id": "widget-10",
+      "type": "messages",
+      "title": "Cambios en servicios (VPN, DNS, DHCP, etc.)",
+      "query": "message:/svc-.*-service/",
+      "timerange": {
+        "type": "relative",
+        "range": 3600
+      },
+      "config": {}
+    },
+    {
+      "id": "widget-11",
+      "type": "histogram",
+      "title": "Eventos por segundo (EPS)",
+      "query": "*",
+      "timerange": {
+        "type": "relative",
+        "range": 3600
+      },
+      "config": {}
+    },
+    {
+      "id": "widget-12",
+      "type": "data table",
+      "title": "Top 5 dispositivos con más eventos",
+      "query": "source:*",
+      "timerange": {
+        "type": "relative",
+        "range": 3600
+      },
+      "config": {}
+    },
+    {
+      "id": "widget-13",
+      "type": "data table",
+      "title": "Eventos por tipo de servicio",
+      "query": "message:/svc-.*-service/",
+      "timerange": {
+        "type": "relative",
+        "range": 3600
+      },
+      "config": {}
+    },
+    {
+      "id": "widget-14",
+      "type": "messages",
+      "title": "Eventos de política de enrutamiento",
+      "query": "message:\"Policy-Based Routing\"",
+      "timerange": {
+        "type": "relative",
+        "range": 3600
+      },
+      "config": {}
+    },
+    {
+      "id": "widget-15",
+      "type": "messages",
+      "title": "Eventos de Teleport fallidos",
+      "query": "message:\"Failed to get teleport clients\"",
+      "timerange": {
+        "type": "relative",
+        "range": 3600
+      },
+      "config": {}
+    }
+  ]
+}
